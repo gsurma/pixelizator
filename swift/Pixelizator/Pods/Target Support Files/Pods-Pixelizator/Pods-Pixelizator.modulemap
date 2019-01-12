@@ -1,0 +1,6 @@
+framework module Pods_Pixelizator {
+  umbrella header "Pods-Pixelizator-umbrella.h"
+
+  export *
+  module * { export * }
+}
