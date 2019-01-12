@@ -94,15 +94,13 @@ final class MainViewController: UIViewController {
     }
     
     private func setImage(image: UIImage, animated: Bool) {
-        DispatchQueue.main.async {
-            let scale = self.previewImageView.frame.width/image.size.width
-            let adjustedImage = image.resize(scaleX: scale, scaleY: scale, interpolation: .default)
-           
-            self.backgroundImageView.image = adjustedImage
-            self.sourceImage = adjustedImage
-            self.showImage(image: image, animated: animated)
-            self.pixelizeImage(pixelSize: CGFloat(self.pixelSizeSlider.value))
-        }
+        let scale = previewImageView.frame.width/image.size.width
+        let adjustedImage = image.resize(scaleX: scale, scaleY: scale, interpolation: .default)
+        
+        backgroundImageView.image = adjustedImage
+        sourceImage = adjustedImage
+        showImage(image: image, animated: animated)
+        pixelizeImage(pixelSize: CGFloat(pixelSizeSlider.value))
     }
     
     private func pixelizeImage(pixelSize: CGFloat) {
@@ -119,11 +117,15 @@ final class MainViewController: UIViewController {
     }
     
     private func showImage(image: UIImage, animated: Bool) {
-        UIView.transition(with: self.previewImageView,
-                          duration: animated ? imageTransitionAnimationTime : 0,
-                          options: .transitionCrossDissolve,
-                          animations: { self.previewImageView.image = image },
-                          completion: nil)
+        if animated {
+            UIView.transition(with: self.previewImageView,
+                              duration: imageTransitionAnimationTime,
+                              options: .transitionCrossDissolve,
+                              animations: { self.previewImageView.image = image },
+                              completion: nil)
+        } else {
+            self.previewImageView.image = image
+        }
     }
 }
 
