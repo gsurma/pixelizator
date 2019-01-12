@@ -4,13 +4,13 @@
 
 # Pixelizator
 
-https://github.com/bmaslakov/cocoa-close-pixelate
-
-https://stackoverflow.com/questions/25510081/how-to-allow-user-to-pick-the-image-with-swift
-
-https://gist.github.com/danyshaanan/6754465
+Pixelize your images with Swift or Python.
 
 ## Swift (iOS)
+
+<img src="assets/screenshot_2.png" width="300">
+<img src="assets/screenshot_3.png" width="300">
+<img src="assets/screenshot_1.png" width="300">
 
 
 ## Python
