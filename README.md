@@ -8,6 +8,8 @@ Pixelize your images with Swift or Python.
 
 ## Swift (iOS)
 
+[<img src="assets/appstore.png">](https://itunes.apple.com/us/app/pixelizator/id1449045698?ls=1&mt=8)
+
 <img src="assets/screenshot_2.png" width="300">
 <img src="assets/screenshot_3.png" width="300">
 <img src="assets/screenshot_1.png" width="300">
