@@ -94,8 +94,9 @@ final class MainViewController: UIViewController {
     }
     
     private func setImage(image: UIImage, animated: Bool) {
-        let scale = previewImageView.frame.width/image.size.width
-        let adjustedImage = image.resize(scaleX: scale, scaleY: scale, interpolation: .default)
+        let scale: CGFloat = previewImageView.frame.width/image.size.width
+        let screenScale = UIScreen.main.scale
+        let adjustedImage = image.resize(scaleX: scale/screenScale, scaleY: scale/screenScale, interpolation: .default)
         
         backgroundImageView.image = adjustedImage
         sourceImage = adjustedImage
